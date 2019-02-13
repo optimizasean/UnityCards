@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class SceneController : MonoBehaviour {
     public const int gridRows = 2;
@@ -9,6 +10,8 @@ public class SceneController : MonoBehaviour {
 
     [SerializeField] private MemoryCard originalCard;
     [SerializeField] private Sprite[] images;
+
+    [SerializeField] private TextMeshPro scoreLabel;
 
     private int _score = 0;
 
@@ -31,6 +34,7 @@ public class SceneController : MonoBehaviour {
     private IEnumerator CheckMatch() {
         if (_firstRevealed.id == _secondRevealed.id) {
             _score++;
+            scoreLabel.text = "Score: " + _score;
         } else {
             yield return new WaitForSeconds(0.5f);
 
