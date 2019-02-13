@@ -56,7 +56,7 @@ public class SceneController : MonoBehaviour {
         for (int i = 0; i < gridCols; i++) {
             for (int j = 0; j < gridRows; j++) {
                 MemoryCard card;
-                if (i == 0 && j == 0) {
+                if (i == 0 && j == 0) { 
                     card = originalCard;
                 } else {
                     card = Instantiate(originalCard) as MemoryCard;
