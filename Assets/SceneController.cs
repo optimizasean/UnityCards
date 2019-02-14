@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public const int gridRows = 2;
@@ -17,6 +18,10 @@ public class SceneController : MonoBehaviour {
 
     private MemoryCard _firstRevealed;
     private MemoryCard _secondRevealed;
+
+    public void Restart() {
+        SceneManager.LoadScene("SampleScene");
+    }
 
     public bool canReveal {
         get { return _secondRevealed == null;}
